@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block build artifacts and source maps
+Disallow: /assets/*.map
+
+Sitemap: https://muhammadbin-naveed.vercel.app/sitemap.xml

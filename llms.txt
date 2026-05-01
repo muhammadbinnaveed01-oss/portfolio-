@@ -1,0 +1,62 @@
+# Muhammad Bin Naveed — Portfolio
+
+## Who is Muhammad Bin Naveed?
+Muhammad Bin Naveed is a Full Stack MERN Developer based in Lahore, Pakistan.
+He specializes in building modern, responsive, and production-ready web applications
+using React.js, Node.js, Express.js, and MongoDB.
+
+## Role
+Full Stack MERN Stack Web Developer
+
+## Location
+Lahore, Pakistan
+
+## Contact
+- Email: muhammadbinnaveed01@gmail.com
+- Phone: +92 321 5081609
+- LinkedIn: https://www.linkedin.com/in/muhammad-bin-naveed-236409252
+- GitHub: https://github.com/muhammadbin-naveed
+
+## Technologies Used
+- Frontend: React.js, Vite, Tailwind CSS, Framer Motion
+- Backend: Node.js, Express.js, REST APIs
+- Database: MongoDB
+- Tools: Git, Vercel, Vite, Three.js, React Three Fiber
+- Other: SEO, GEO, AEO, Google APIs, Auth Systems, Deployment
+
+## Services Offered
+- Full Stack Web Development (MERN)
+- Frontend Development (React.js, Tailwind CSS)
+- Backend API Development (Node.js, Express.js)
+- Database Design (MongoDB)
+- 3D Web Experiences (Three.js, React Three Fiber)
+- SEO, GEO, and AEO Optimization
+- Production Deployment and Hosting
+
+## Education
+- BSCS — Rise Group of Colleges, Lahore (Ongoing, 4th Semester)
+- MERN Stack Certification — EVS Training Institute, Lahore (January 2026)
+
+## Experience
+- MERN Stack Web Developer Intern — Click2Print.pk (6-Month Internship, completed May 2026)
+
+## Live Projects
+- https://click2print.pk/ — E-commerce printing platform
+- https://iqx.world/ — Web application
+- https://faizalamfaizi.com/ — Personal portfolio
+- https://www.aitransportltd.co.uk/ — Transport company website
+
+## Site Pages
+- / — Home (portfolio overview, hero, skills, projects intro)
+- /About — About page (bio, skills, education, experience)
+- /Project — Projects page (real-world client projects)
+- /Contact — Contact page (form, social links, 3D scene)
+
+## Site URL
+https://muhammadbin-naveed.vercel.app/
+
+## Summary
+Muhammad Bin Naveed is a skilled MERN Stack developer with hands-on experience
+building production-level web applications. He has completed a 6-month internship,
+holds a MERN Stack certification, and has delivered real client projects across
+e-commerce, transport, and personal branding domains.
