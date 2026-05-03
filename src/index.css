@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* ── Tailwind v4 theme tokens ── */
+@theme {
+  /* section spacing utility — use as py-section on any <section> */
+  --spacing-section: clamp(4rem, 8vw, 9rem);
+}
+
+/* ── Global base ── */
+html,
+body {
+  overflow-x: hidden;
+  background-color: #0a0a0f;          /* near-black with a faint blue-black tint */
+  color: #d1d5db;                     /* gray-300 — readable without eye-strain */
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Paragraph contrast tuning ── */
+p {
+  color: rgba(209, 213, 219, 0.85);   /* ~85% gray-300 — softer than pure white */
+  line-height: 1.75;
+}
+
+/* ── Section vertical rhythm via clamp() ──
+   clamp(MIN, PREFERRED, MAX)
+   - 4rem  → floor on small phones
+   - 8vw   → scales with viewport width
+   - 9rem  → ceiling on ultra-wide (≥1440px)
+*/
+.section-spacing {
+  padding-top:    clamp(4rem, 8vw, 9rem);
+  padding-bottom: clamp(4rem, 8vw, 9rem);
+}

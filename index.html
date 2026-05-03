@@ -35,6 +35,23 @@
     <link rel="dns-prefetch" href="https://www.gstatic.com" />
     <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
 
+    <!-- Restore route from 404.html SPA redirect -->
+    <script>
+      (function(l) {
+        if (l.search[1] === 'p') {
+          var decoded = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          });
+          window.history.replaceState(
+            null, null,
+            l.pathname.slice(0, -1) + (decoded[0] ? '/' + decoded[0].slice(1) : '') +
+            (decoded[1] ? '?' + decoded[1].slice(1) : '') +
+            l.hash
+          );
+        }
+      }(window.location));
+    </script>
+
     <!-- Base JSON-LD (static fallback for crawlers) -->
     <script type="application/ld+json">
     {
@@ -71,15 +88,10 @@
       "inLanguage": "en"
     }
     </script>
-    <script type="module" crossorigin src="/Portfolio/assets/index-CZtC6hkG.js"></script>
-    <link rel="modulepreload" crossorigin href="/Portfolio/assets/rolldown-runtime-COnpUsM8.js">
-    <link rel="modulepreload" crossorigin href="/Portfolio/assets/icons-fa-BDfdESfF.js">
-    <link rel="modulepreload" crossorigin href="/Portfolio/assets/react-vendor-PP9FTzr2.js">
-    <link rel="modulepreload" crossorigin href="/Portfolio/assets/motion-vendor-DQ9CoecE.js">
-    <link rel="stylesheet" crossorigin href="/Portfolio/assets/index-CInHpoqn.css">
   </head>
   <body>
     <div id="root"></div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
