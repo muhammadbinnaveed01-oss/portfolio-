@@ -12,15 +12,16 @@ const Home = () => {
   return (
     <div className="relative">
       <SEO page="home" />
-      <div className="relative">
-        <Hero/>
+      <Hero/>
+      <div className="bg-black z-10 relative">
+        <Powerfull_line/>
+        <What_you_do/>
+        <Who_am_i/>
+        <ParallaxGallery/>
+        <Projects_hom_intro/>
+        <Contact_cta/>
       </div>
-      <Powerfull_line/>
-      <What_you_do/>
-      <Who_am_i/>
-      <ParallaxGallery/>
-      <Projects_hom_intro/>
-      <Contact_cta/>
+     
      
       
     </div>

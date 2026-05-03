@@ -13,7 +13,7 @@ const item = {
 
 function What_you_do() {
   return (
-    <section className="bg-black relative overflow-hidden py-16 sm:py-20 px-5 sm:px-8 md:px-12 lg:px-16">
+    <section className="bg-black  overflow-hidden py-16 sm:py-20 px-5 sm:px-8 md:px-12 lg:px-16">
 
       {/* Background glow — purple 30% */}
       <div className="absolute inset-0 bg-linear-to-br from-transparent via-purple-500/8 to-transparent pointer-events-none" />

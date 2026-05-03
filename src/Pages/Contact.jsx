@@ -162,154 +162,173 @@ const handleSubmit = async (e) => {
       </section>
 
       {/* ================= CONTACT SECTION ================= */}
-      <section className="min-h-screen flex items-center justify-center px-6 py-20 bg-black">
-        <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
+<section className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-14 sm:py-20 bg-black">
 
-          {/* LEFT: 3D MODEL — earth */}
-          <div
-            ref={container2Ref}
-            style={{ position: "relative" }}
-            className="w-full h-75 sm:h-100 md:h-125 rounded-full overflow-hidden bg-purple-600/10 border border-white/60"
-          >
-            <Suspense fallback={<SceneFallback />}>
-              <ContactScene model="earth" containerRef={container2Ref} />
-            </Suspense>
+  <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 items-center">
+
+    {/* LEFT: 3D MODEL — earth */}
+    <div
+      ref={container2Ref}
+      style={{ position: "relative" }}
+      className="w-full h-60 sm:h-80 md:h-125 rounded-full overflow-hidden bg-purple-600/10 border border-white/60"
+    >
+      <Suspense fallback={<SceneFallback />}>
+        <ContactScene model="earth" containerRef={container2Ref} />
+      </Suspense>
+    </div>
+
+    {/* RIGHT: FORM + INFO */}
+    <div className="space-y-6 text-white">
+
+      <div className="text-center md:text-left">
+        <h2 className="text-2xl sm:text-3xl font-bold">
+          Contact <span className="text-purple-400">Me</span>
+        </h2>
+        <p className="text-gray-400 mt-2 text-sm sm:text-base">
+          Have a project idea, collaboration, or question?
+          Let's build something amazing together.
+        </p>
+      </div>
+
+      {/* INFO CARD */}
+      <div className="bg-linear-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-4 sm:p-5 backdrop-blur-xl shadow-[0_0_30px_rgba(168,85,247,0.15)]">
+
+        <div className="space-y-4 text-gray-300 text-sm sm:text-base">
+
+          <div className="flex items-start gap-3">
+            <Mail className="text-purple-400 w-5 h-5 sm:w-6 sm:h-6 mt-1" />
+            <a href="mailto:muhammadbinnaveed01@gmail.com" className="break-all hover:text-purple-300 transition-colors">
+              muhammadbinnaveed01@gmail.com
+            </a>
           </div>
 
-          {/* RIGHT: FORM + INFO */}
-          <div className="space-y-6 text-white">
+          <div className="flex items-center gap-3">
+            <Phone className="text-purple-400 w-5 h-5 sm:w-6 sm:h-6" />
+            <a href="tel:+923215081609" className="hover:text-purple-300 transition-colors">
+              +92 321 5081609
+            </a>
+          </div>
 
-            <div>
-              <h2 className="text-3xl font-bold">
-                Contact <span className="text-purple-400">Me</span>
-              </h2>
-              <p className="text-gray-400 mt-2">
-                Have a project idea, collaboration, or question?
-                Let's build something amazing together.
-              </p>
-            </div>
+          <div className="flex items-start gap-3">
+            <MapPin className="text-purple-400 w-6 h-6 sm:w-6 sm:h-6 mt-1" />
+            <span className="leading-relaxed text-sm sm:text-base">
+              E-858 D-2 Bilal Street, Abusar Chowk, Ali Park,
+              Badia Road, Lahore, Pakistan
+            </span>
+          </div>
 
-            {/* INFO CARD */}
-            <div className="bg-linear-to-br from-white/10 to-white/5 border border-white/10 rounded-2xl p-5 backdrop-blur-xl shadow-[0_0_30px_rgba(168,85,247,0.15)]">
-              <div className="space-y-4 text-gray-300 text-sm sm:text-base">
+          {/* SOCIAL */}
+          <div className="flex flex-wrap gap-3 pt-1">
 
-                <div className="flex items-start gap-3">
-                  <Mail className="text-purple-400 w-5 h-5 sm:w-6 sm:h-6 mt-1" />
-                  <a href="mailto:muhammadbinnaveed01@gmail.com" className="break-all hover:text-purple-300 transition-colors">
-                    muhammadbinnaveed01@gmail.com
-                  </a>
-                </div>
+            <a href="https://www.linkedin.com/in/muhammad-bin-naveed-236409252"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs hover:bg-blue-600/40 transition-colors">
+              <FaLinkedinIn /> LinkedIn
+            </a>
 
-                <div className="flex items-center gap-3">
-                  <Phone className="text-purple-400 w-5 h-5 sm:w-6 sm:h-6" />
-                  <a href="tel:+923215081609" className="hover:text-purple-300 transition-colors">
-                    +92 321 5081609
-                  </a>
-                </div>
+            <a href="https://www.facebook.com/share/1B8xo1mvwx"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-800/20 border border-blue-700/30 text-blue-200 text-xs hover:bg-blue-800/40 transition-colors">
+              <FaFacebookF /> Facebook
+            </a>
 
-                <div className="flex items-start gap-3">
-                  <MapPin className="text-purple-400 w-12 h-6 sm:w-6 sm:h-6 mt-1" />
-                  <span className="leading-relaxed">
-                    E-858 D-2 Bilal Street, Abusar Chowk, Ali Park,
-                    Badia Road, Lahore, Pakistan
-                  </span>
-                </div>
+            <a href="https://www.instagram.com/musilmuham?igsh=MTR3OXQzZmxwY2Mxdw=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-600/20 border border-pink-500/30 text-pink-300 text-xs hover:bg-pink-600/40 transition-colors">
+              <FaInstagram /> Instagram
+            </a>
 
-                <div className="flex flex-wrap gap-3 pt-1">
-                  <a href="https://www.linkedin.com/in/muhammad-bin-naveed-236409252" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-600/20 border border-blue-500/30 text-blue-300 text-xs hover:bg-blue-600/40 transition-colors">
-                    <FaLinkedinIn /> LinkedIn
-                  </a>
-                  <a href="https://www.facebook.com/share/1B8xo1mvwx" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-800/20 border border-blue-700/30 text-blue-200 text-xs hover:bg-blue-800/40 transition-colors">
-                    <FaFacebookF /> Facebook
-                  </a>
-                  <a href="https://www.instagram.com/musilmuham?igsh=MTR3OXQzZmxwY2Mxdw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-600/20 border border-pink-500/30 text-pink-300 text-xs hover:bg-pink-600/40 transition-colors">
-                    <FaInstagram /> Instagram
-                  </a>
-                  <a href="https://wa.me/923215081609" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-600/20 border border-green-500/30 text-green-300 text-xs hover:bg-green-600/40 transition-colors">
-                    <FaWhatsapp /> WhatsApp
-                  </a>
-                </div>
-
-              </div>
-            </div>
-
-            {/* FORM */}
-            <div className="bg-linear-to-br from-black/60 via-black/40 to-purple-900/10 border border-white/10 rounded-2xl shadow-2xl p-8 backdrop-blur-xl">
-              <form className="space-y-5" onSubmit={handleSubmit}>
-
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  value={formState.name}
-                  onChange={(e) => setFormState(s => ({ ...s, name: e.target.value }))}
-                  required
-                  className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-white/30"
-                />
-
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  value={formState.email}
-                  onChange={(e) => setFormState(s => ({ ...s, email: e.target.value }))}
-                  required
-                  className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-white/30"
-                />
-
-                <input
-                  type="tel"
-                  placeholder="Your Phone Number (optional)"
-                  value={formState.phone}
-                  onChange={(e) => setFormState(s => ({ ...s, phone: e.target.value }))}
-                  className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-white/30"
-                />
-
-                <textarea
-                  rows="4"
-                  placeholder="Write your message..."
-                  value={formState.message}
-                  onChange={(e) => setFormState(s => ({ ...s, message: e.target.value }))}
-                  required
-                  className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 placeholder:text-white/30"
-                />
-
-                <div className="flex justify-center">
-                  <div
-                    id="recaptcha-box"
-                    data-sitekey="6LfeztIsAAAAAPDnfiV42dmdj3JhiXNxcbkE9rsk"
-                    data-callback="onCaptchaChange"
-                    data-expired-callback="onCaptchaExpired"
-                  />
-                </div>
-
-                {status === "success" && (
-                  <p className="text-green-400 text-sm text-center py-2">
-                    ✓ Message sent! I'll get back to you soon.
-                  </p>
-                )}
-                {status === "error" && (
-                  <p className="text-red-400 text-sm text-center py-2">
-                    Something went wrong. Please try again or email me directly.
-                  </p>
-                )} 
-
-                <button
-                  type="submit"
-                  disabled={status === "sending"}
-                  className="w-full bg-purple-600 hover:bg-purple-500 disabled:opacity-60 disabled:cursor-not-allowed text-white py-3 rounded-xl font-medium transition-colors"
-                >
-                  {status === "sending" ? "Sending..." : "Send Message"}
-                </button>
-
-              </form>
-            </div>
+            <a href="https://wa.me/923215081609"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-600/20 border border-green-500/30 text-green-300 text-xs hover:bg-green-600/40 transition-colors">
+              <FaWhatsapp /> WhatsApp
+            </a>
 
           </div>
+
         </div>
-      </section>
+      </div>
+
+      {/* FORM */}
+      <div className="bg-linear-to-br from-black/60 via-black/40 to-purple-900/10 border border-white/10 rounded-2xl shadow-2xl p-5 sm:p-8 backdrop-blur-xl">
+
+        <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
+
+          <input
+            type="text"
+            placeholder="Your Name"
+            value={formState.name}
+            onChange={(e) => setFormState(s => ({ ...s, name: e.target.value }))}
+            required
+            className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
+          />
+
+          <input
+            type="email"
+            placeholder="Your Email"
+            value={formState.email}
+            onChange={(e) => setFormState(s => ({ ...s, email: e.target.value }))}
+            required
+            className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
+          />
+
+          <input
+            type="tel"
+            placeholder="Your Phone Number (optional)"
+            value={formState.phone}
+            onChange={(e) => setFormState(s => ({ ...s, phone: e.target.value }))}
+            className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
+          />
+
+          <textarea
+            rows="4"
+            placeholder="Write your message..."
+            value={formState.message}
+            onChange={(e) => setFormState(s => ({ ...s, message: e.target.value }))}
+            required
+            className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
+          />
+
+          <div className="flex justify-center">
+            <div
+              id="recaptcha-box"
+              data-sitekey="6LfeztIsAAAAAPDnfiV42dmdj3JhiXNxcbkE9rsk"
+              data-callback="onCaptchaChange"
+              data-expired-callback="onCaptchaExpired"
+            />
+          </div>
+
+          {status === "success" && (
+            <p className="text-green-400 text-sm text-center py-2">
+              ✓ Message sent! I'll get back to you soon.
+            </p>
+          )}
+
+          {status === "error" && (
+            <p className="text-red-400 text-sm text-center py-2">
+              Something went wrong. Please try again or email me directly.
+            </p>
+          )}
+
+          <button
+            type="submit"
+            disabled={status === "sending"}
+            className="w-full bg-purple-600 hover:bg-purple-500 disabled:opacity-60 disabled:cursor-not-allowed text-white py-3 rounded-xl font-medium transition-colors"
+          >
+            {status === "sending" ? "Sending..." : "Send Message"}
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</section>
 
     </div>
   );
