@@ -39,3 +39,11 @@ p {
   padding-top:    clamp(4rem, 8vw, 9rem);
   padding-bottom: clamp(4rem, 8vw, 9rem);
 }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

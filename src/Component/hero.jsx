@@ -81,7 +81,7 @@ export default function Hero() {
 
   // Content fades out only in the last 20% of the hero scroll
   const contentOpacity = useTransform(scrollYProgress, [0,0.2, 1], [1,0, 0]);
-  const contentblur = useTransform(scrollYProgress, [0,0.2, 1],["0px","0px","10px"])
+  const contentblur = useTransform(scrollYProgress, [0,0.2, 1],["0px","3px","10px"])
   const contentY = useTransform(scrollYProgress, [0,1], [0, isMobile ? -30 : -60]);
 
   useMotionValueEvent(scrollYProgress, "change", (p) => {
@@ -158,7 +158,7 @@ export default function Hero() {
                 style={{ y: profileY, scale: profileScale, rotate: profileRotate }}
                 className="relative"
               >
-                <div className="w-32 h-40 sm:w-48 sm:h-56 md:w-64 md:h-80 rounded-2xl overflow-hidden border border-purple-400/40 shadow-lg shadow-purple-900/30">
+                <div className="w-32 h-40 sm:w-48 sm:h-56 md:w-64 md:h-80 rounded-full overflow-hidden border border-purple-400/40 shadow-lg shadow-purple-900/30">
                   <img
                     src={`${BASE}muhammad.webp`}
                     alt="Muhammad Bin Naveed — MERN Stack Developer"

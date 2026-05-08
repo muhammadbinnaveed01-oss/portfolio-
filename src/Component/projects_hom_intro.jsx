@@ -32,32 +32,108 @@ const portfolioSecondRow = portfolio.slice(4, 8);
 
 /* ── SCROLL STRIP ── */
 function ScrollStrip({ images, direction, scrollProgress }) {
-  const range = direction === "right" ? [-80, 80] : [80, -80];
+
+  const range = direction === "right" ? [-120, 120] : [120, -120];
   const x = useTransform(scrollProgress, [0, 1], range);
 
   return (
     <div className="overflow-hidden w-full py-4 sm:py-5">
       <motion.div
         style={{ x }}
-        className="flex min-w-full justify-center gap-3 sm:gap-4 md:gap-5 px-4 sm:px-6 md:px-8"
+        className="
+          flex
+          w-max
+          gap-3 sm:gap-4 md:gap-5
+          px-4 sm:px-6 md:px-8
+          will-change-transform
+        "
       >
         {images.map((img) => (
           <motion.div
             key={img.id}
             whileHover={{ scale: 1.04, y: -4 }}
             transition={{ type: "spring", stiffness: 180, damping: 18 }}
-            className="relative shrink-0 w-[78vw] max-w-[320px] sm:w-64 md:w-72 rounded-2xl overflow-hidden border border-white/10 bg-white/5 shadow-lg shadow-black/40"
+            className="
+              relative shrink-0
+              w-[70vw]
+              max-w-[320px]
+              sm:w-64
+              md:w-72
+              rounded-2xl
+              overflow-hidden
+              border border-white/10
+              bg-white/5
+              shadow-lg shadow-black/40
+            "
           >
             <img
               src={img.src}
               alt={img.alt}
-              className="w-full h-44 sm:h-52 md:h-60  object-contain bg-black/10"
+              className="
+                w-full
+                h-44 sm:h-52 md:h-60
+                object-contain
+                bg-black/10
+              "
               loading="lazy"
             />
+
             <div className="absolute inset-0 bg-linear-to-t from-black/50 via-black/10 to-transparent" />
           </motion.div>
         ))}
       </motion.div>
+    </div>
+  );
+}
+function SliderMobile({ images }) {
+  return (
+    <div className="relative md:hidden">
+
+      {/* LEFT FADE */}
+      <div className="pointer-events-none absolute left-0 top-0 h-full w-10 bg-linear-to-r  from-white-400/30  to-transparent z-10" />
+
+      {/* RIGHT FADE */}
+      <div className="pointer-events-none absolute right-0 top-0 h-full w-10  bg-linear-to-r from-white-400/30 to-transparent z-10" />
+
+      {/* Swipe Hint */}
+      <motion.div
+        className="text-white/60 text-sm mb-4 flex justify-center items-center gap-2"
+        animate={{ x: [0, 8, 0] }}
+        transition={{ repeat: Infinity, duration: 1.5 }}
+      >
+        ← Swipe →
+      </motion.div>
+
+      {/* SLIDER */}
+      <div className="overflow-x-auto scrollbar-hide px-4 pb-6">
+        <div className="flex gap-4 w-max snap-x snap-mandatory">
+
+          {images.map((img) => (
+            <div
+              key={img.id}
+              className="
+                snap-center
+                shrink-0
+                w-[72vw]
+                max-w-[320px]
+                rounded-2xl
+                overflow-hidden
+                border border-white/10
+                bg-white/5
+                shadow-lg shadow-black/40
+              "
+            >
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="w-full h-52 object-contain bg-black/10"
+                loading="lazy"
+              />
+            </div>
+          ))}
+
+        </div>
+      </div>
     </div>
   );
 }
@@ -142,16 +218,24 @@ function Projects_hom_intro() {
         </div>
 
         <div className="mt-6 sm:mt-8">
-          <ScrollStrip
-            images={portfolioFirstRow}
-            direction="right"
-            scrollProgress={portfolioScroll}
-          />
-          <ScrollStrip
-            images={portfolioSecondRow}
-            direction="left"
-            scrollProgress={portfolioScroll}
-          />
+          {/* MOBILE SLIDER */}
+<SliderMobile images={portfolio} />
+
+{/* DESKTOP SCROLL EFFECT */}
+<div className="hidden md:block">
+  <ScrollStrip
+    images={portfolioFirstRow}
+    direction="right"
+    scrollProgress={portfolioScroll}
+  />
+
+  <ScrollStrip
+    images={portfolioSecondRow}
+    direction="left"
+    scrollProgress={portfolioScroll}
+  />
+</div>
+
         </div>
       </section>
 
@@ -169,16 +253,21 @@ function Projects_hom_intro() {
         </div>
 
         <div className="mt-6 sm:mt-8">
-          <ScrollStrip
-            images={pvtldFirstRow}
-            direction="right"
-            scrollProgress={pvtldScroll}
-          />
-          <ScrollStrip
-            images={pvtldSecondRow}
-            direction="left"
-            scrollProgress={pvtldScroll}
-          />
+       <SliderMobile images={pvtld} />
+
+<div className="hidden md:block">
+  <ScrollStrip
+    images={pvtldFirstRow}
+    direction="right"
+    scrollProgress={pvtldScroll}
+  />
+
+  <ScrollStrip
+    images={pvtldSecondRow}
+    direction="left"
+    scrollProgress={pvtldScroll}
+  />
+</div>
         </div>
         <motion.div
   initial={{ opacity: 0, y: 30 }}

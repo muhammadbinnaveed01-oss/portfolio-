@@ -7,12 +7,15 @@ import What_you_do from '../Component/What_you_do'
 import Projects_hom_intro from '../Component/projects_hom_intro'
 import Contact_cta from '../Component/Contact_cta'
 import SEO from '../Component/SEO'
+import MobileHero from '../Component/MobileHero'
+import HeroWrapper from '../Component/Herowraper'
 
 const Home = () => {
   return (
     <div className="relative">
       <SEO page="home" />
-      <Hero/>
+      <HeroWrapper/>
+      
       <div className="bg-black z-10 relative">
         <Powerfull_line/>
         <What_you_do/>
