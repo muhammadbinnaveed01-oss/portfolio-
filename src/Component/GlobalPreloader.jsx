@@ -8,7 +8,7 @@ export default function GlobalPreloader({ progress, visible }) {
           key="global-preloader"
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.5, ease: "easeInOut" } }}
-          className="fixed inset-0 z-200 flex flex-col items-center justify-center bg-[#0a0a0f] select-none"
+          className="fixed inset-0 z-120 flex flex-col items-center justify-center bg-[#0a0a0f] select-none"
         >
           {/* Name */}
           <motion.p

@@ -82,6 +82,16 @@ const handleSubmit = async (e) => {
       body: body.toString(),
     });
 
+    // Add response validation before parsing JSON
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new Error("Expected JSON response");
+    }
+
     const text = await res.text();
     const data = JSON.parse(text);
 
@@ -258,40 +268,56 @@ const handleSubmit = async (e) => {
 
         <form className="space-y-4 sm:space-y-5" onSubmit={handleSubmit}>
 
-          <input
-            type="text"
-            placeholder="Your Name"
-            value={formState.name}
-            onChange={(e) => setFormState(s => ({ ...s, name: e.target.value }))}
-            required
-            className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
-          />
+          <div>
+            <label htmlFor="name" className="sr-only">Your Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              value={formState.name}
+              onChange={(e) => setFormState(s => ({ ...s, name: e.target.value }))}
+              required
+              className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
 
-          <input
-            type="email"
-            placeholder="Your Email"
-            value={formState.email}
-            onChange={(e) => setFormState(s => ({ ...s, email: e.target.value }))}
-            required
-            className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
-          />
+          <div>
+            <label htmlFor="email" className="sr-only">Your Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Your Email"
+              value={formState.email}
+              onChange={(e) => setFormState(s => ({ ...s, email: e.target.value }))}
+              required
+              className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
 
-          <input
-            type="tel"
-            placeholder="Your Phone Number (optional)"
-            value={formState.phone}
-            onChange={(e) => setFormState(s => ({ ...s, phone: e.target.value }))}
-            className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
-          />
+          <div>
+            <label htmlFor="phone" className="sr-only">Your Phone Number (optional)</label>
+            <input
+              type="tel"
+              id="phone"
+              placeholder="Your Phone Number (optional)"
+              value={formState.phone}
+              onChange={(e) => setFormState(s => ({ ...s, phone: e.target.value }))}
+              className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
 
-          <textarea
-            rows="4"
-            placeholder="Write your message..."
-            value={formState.message}
-            onChange={(e) => setFormState(s => ({ ...s, message: e.target.value }))}
-            required
-            className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
-          />
+          <div>
+            <label htmlFor="message" className="sr-only">Write your message...</label>
+            <textarea
+              id="message"
+              rows="4"
+              placeholder="Write your message..."
+              value={formState.message}
+              onChange={(e) => setFormState(s => ({ ...s, message: e.target.value }))}
+              required
+              className="w-full bg-white/5 border border-white/10 text-white rounded-xl px-4 py-3 text-sm focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
 
           <div className="flex justify-center">
             <div
@@ -302,14 +328,19 @@ const handleSubmit = async (e) => {
             />
           </div>
 
+          <div aria-live="polite" className="sr-only" id="form-status">
+            {status === "success" && "Message sent successfully. I'll get back to you soon."}
+            {status === "error" && "Something went wrong. Please try again or email me directly."}
+          </div>
+
           {status === "success" && (
-            <p className="text-green-400 text-sm text-center py-2">
+            <p className="text-green-400 text-sm text-center py-2" role="status">
               ✓ Message sent! I'll get back to you soon.
             </p>
           )}
 
           {status === "error" && (
-            <p className="text-red-400 text-sm text-center py-2">
+            <p className="text-red-400 text-sm text-center py-2" role="alert">
               Something went wrong. Please try again or email me directly.
             </p>
           )}

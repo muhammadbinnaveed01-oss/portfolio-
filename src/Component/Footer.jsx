@@ -79,19 +79,19 @@ export default function Footer() {
             </h3>
 
             <div className="flex justify-center gap-2 sm:gap-3 text-white/70">
-              <motion.a whileHover={{ scale: 1.1 }} href="https://www.facebook.com/share/1B8xo1mvwx/">
+              <motion.a whileHover={{ scale: 1.1 }} href="https://www.facebook.com/share/1B8xo1mvwx" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF className="text-sm sm:text-lg" />
               </motion.a>
 
-              <motion.a whileHover={{ scale: 1.1 }} href=" https://www.instagram.com/musilmuham?igsh=MTR3OXQzZmxwY2Mxdw==">
+              <motion.a whileHover={{ scale: 1.1 }} href="https://www.instagram.com/musilmuham?igsh=MTR3OXQzZmxwY2Mxdw==" target="_blank" rel="noopener noreferrer">
                 <FaInstagram className="text-sm sm:text-lg" />
               </motion.a>
 
-              <motion.a whileHover={{ scale: 1.1 }} href="www.linkedin.com/in/muhammad-bin-naveed-236409252">
+              <motion.a whileHover={{ scale: 1.1 }} href="https://www.linkedin.com/in/muhammad-bin-naveed-236409252" target="_blank" rel="noopener noreferrer">
                 <FaLinkedinIn className="text-sm sm:text-lg" />
               </motion.a>
 
-              <motion.a whileHover={{ scale: 1.1 }} href="https://wa.me/923215081609?text=Hi%20Muhammad%20Bin%20Naveed,%20I%20want%20to%20connect%20with%20you">
+              <motion.a whileHover={{ scale: 1.1 }} href="https://wa.me/923215081609?text=Hi%20Muhammad%20Bin%20Naveed,%20I%20want%20to%20connect%20with%20you" target="_blank" rel="noopener noreferrer">
                 <FaWhatsapp className="text-sm sm:text-lg" />
               </motion.a>
             </div>

@@ -347,8 +347,9 @@ variants={item}
                   </p>
 
                   <ul className="text-white/85 mt-3 space-y-1 list-disc list-inside text-sm sm:text-base">
-                    <li>Semester 1 CGPA: 3.40 / 5.00</li>
-                    <li>Semester 2 CGPA: 3.37 / 5.00</li>
+                    <li>Semester 1 CGPA: 3.40 / 4.00</li>
+                    <li>Semester 2 CGPA: 3.37 / 4.00</li>
+                    <li>Semester 3 CGPA: 3.0 / 4.00</li>
                   </ul>
 
                   <p className="text-white/75 mt-3 text-sm sm:text-base leading-relaxed">

@@ -33,7 +33,7 @@ export default function ScrollUI() {
       {/* ── Scroll progress bar ── */}
       <motion.div
         style={{ scaleX, transformOrigin: "left" }}
-        className="fixed top-0 left-0 right-0 h-[2px] bg-linear-to-r from-violet-600 to-purple-400 z-60 origin-left"
+        className="fixed top-0 left-0 right-0 h-[2px] bg-linear-to-r from-violet-600 to-purple-400 z-80 origin-left"
       />
 
       {/* ── WhatsApp button — always visible ── */}
